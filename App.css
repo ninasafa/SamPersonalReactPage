@@ -1,0 +1,384 @@
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
+:root{
+    --sizeOfCube : calc(0.12 * 100vw);
+    
+}
+
+.app{
+    box-sizing: border-box;
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+/*.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/*.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
+
+.div-main {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    background-color: gray;
+    text-align: center;
+    /*animation: fadeIn 18s ease-in-out;*/
+    z-index : -1;
+}
+
+
+.img-welcome{
+    display: block;
+    margin: 0px auto;
+}
+
+
+
+#minecraft{
+    height: var(--sizeOfCube);
+    width:10%;
+    position:absolute;
+    left:22%;
+    top: 10%;
+    
+    animation: fadeIn 8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*.star {
+    position: fixed;
+    pointer-events: none;
+}
+
+.star:before, .star:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '\2726';
+        font-size: 9px;
+}
+
+    .star:before {
+        color: transparent;
+        text-shadow: 0 0 3px rgb(250, 250, 174);
+    }
+
+    .star:after {
+        background: yellow;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    */
+
+.container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin: 0 auto;
+    padding: 2em;
+    
+}
+
+.cube {
+    width: var(--sizeOfCube);
+    height: var(--sizeOfCube);   
+    
+}
+
+.sampad {
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1,0, -20deg);
+}
+
+.drum {
+    transform-style: preserve-3d;
+    transform: rotate3d(-1, 1,0, 20deg);
+}
+
+.swim {
+    margin: 70px auto;
+    transform-style: preserve-3d;
+    transform: rotate3d(1,1,0, 20deg);
+    
+}
+
+.face {
+    width: var(--sizeOfCube);
+    height: var(--sizeOfCube);
+    background: #ff8c00;                                       /**#ffd700;*/
+    border: 2px solid black;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front {
+    transform: translateZ(calc(var(--sizeOfCube) / 2));
+}
+
+.back {
+    transform: translateZ(calc(var(--sizeOfCube) / -2)) rotateY(180deg);
+}
+
+.left {
+    transform: translateX(calc(var(--sizeOfCube) / -2)) rotateY(-90deg);
+}
+
+.right {
+    transform: translateX(calc(var(--sizeOfCube) / 2)) rotateY(90deg);
+}
+
+.top {
+    transform: translateY(calc(var(--sizeOfCube) / -2)) rotateX(90deg) rotateZ(-90deg);
+}
+
+.bottom {
+    transform: translateY(calc(var(--sizeOfCube) / 2)) rotateX(90deg) rotateZ(90deg);
+}
+
+a:hover a:link {
+    text-decoration: none;
+}
+
+.sampad:hover {
+    animation-name: turn-left;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.drum:hover {
+    animation-name: turn-right;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.swim:hover {
+    animation-name: turn-up;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes turn-left {
+
+    from {
+        transform: rotate3d(1,1,0, -20deg);
+    }
+
+    to {
+        transform: rotate3d(0,1,0,-90deg);
+    }
+}
+
+@keyframes turn-right {
+
+    from {
+        transform: rotate3d(-1,1,0, 20deg);
+    }
+
+    to {
+        transform: rotate3d(0,1,0,90deg);
+    }
+}
+
+@keyframes turn-up {
+
+    from {
+        transform: rotate3d(1,1,0, 20deg);
+    }
+
+    to {
+        transform: rotate3d(1,0,0,90deg);
+    }
+}
+
+
+
+#sampad, #drum, #mine-back, #swim{
+    width: var(--sizeOfCube);
+    height: var(--sizeOfCube);
+}
+
+.imgWithText{
+    z-index : -1;
+
+}
+
+
+.break{
+    flex-basis: 100%;
+    height: 0;
+}
+
+.textFace {
+    color: dodgerblue;
+    font-family: 'Minecraft';
+    font-size: x-small;
+    position: absolute;
+    width: var(--sizeOfCube);
+    height: var(--sizeOfCube);
+    margin: 0 auto;
+    
+}
+
+.rightText {
+    transform: translateX(calc((var(--sizeOfCube) / 2) + 5px)) translateY(0.25rem) rotateY(90deg);
+}
+
+.leftText {
+    transform: translateX(calc(var(--sizeOfCube) / -2)) translateY(0.25rem) rotateY(90deg) scale(-1,1);
+}
+
+.bottomText {
+    transform: translateY(calc((var(--sizeOfCube) / 2) + 5px)) rotateX(-90deg);
+    /* padding-right: 3%;*/
+}
+
+.special{
+   color:orange;
+   margin: 0;
+}
+
+.pixels{
+    width: 30%;
+   
+}
+
+.pixelLeft {
+    background: linear-gradient(90deg, black, gray);
+    
+}
+
+.pixelRight {
+    background: linear-gradient(90deg, gray, black);
+  
+}
+    
+
+.contents{
+    width: 40%;
+    padding-top: 5%;
+
+}
+
+@media only screen and (max-width: 760px) {
+
+    :root {
+        --sizeOfCube: calc(0.3 * 100vw);
+    }
+
+    .img-welcome, .img-name {
+        max-height:95%;
+        max-width: 95%;
+    }
+
+    .container{
+        flex-direction: column;
+      
+      
+    }
+
+    .textFace{
+        font-size: xx-small;
+    }
+
+    .mobileBreak{
+        height: 5rem;
+        width: 100%;
+    }
+
+    #minecraft{
+        position:absolute;
+        left: 3rem;
+        top: 5rem;
+        height: 25%;
+        width: 15%;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    
+    .img-welcome, .img-name {
+        max-height: 95%;
+        max-width: 95%;
+    }
+
+    
+
+    .mobileBreak {
+        height: 5rem;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 1281px){
+
+    #minecraft {
+        height: var(--sizeOfCube);
+        width: 10%;
+
+    }
+
+    .textFace{
+        font-size: medium;
+    }
+}
